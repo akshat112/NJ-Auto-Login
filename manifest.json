@@ -1,0 +1,29 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
+
+  "name": "NJ Direct Login",
+  "description": "Log you in directly to NJ Partner Desk just by single click.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title" : "NJ Partnerdesk Login"
+  },
+
+  "options_page": "options.html",
+"content_scripts": [{
+        "run_at" :"document_end",
+        "matches": ["https://www.njindiaonline.in/pdesk/*"],
+        "all_frames": true,
+        "js":      ["popup.js"]
+    }],
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "http://*/*",
+    "storage"
+  ]
+}
