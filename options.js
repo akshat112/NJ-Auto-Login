@@ -1,7 +1,7 @@
 // Saves options to chrome.storage
 function save_options() {
-  var username = document.getElementById('username').value;
-  var password = document.getElementById('password').value;
+  var username = btoa(document.getElementById('username').value);
+  var password = btoa(document.getElementById('password').value);
   chrome.storage.sync.set({
     username: username,
     password: password
